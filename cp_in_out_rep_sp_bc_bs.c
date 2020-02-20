@@ -6,10 +6,11 @@ int main()
 
     while ((c = getchar()) != EOF)
         if (c == '\\')
-            n1;
+           printf("\\\\");
         else if (c == '\t')
-            ++n2;
-        else if (c == ' ')
-            ++n3;
-    printf("There are %d new lines %d tabs and %d spaces\n", n1, n2, n3);
+           printf("\\t");
+        else if (c == '\b')
+            printf("\\b");
+        else
+            putchar(c);
 }

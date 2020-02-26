@@ -24,20 +24,12 @@ int getlines(char s[], int lim)
     int c, i, j;
 
     for (i = 0; i < lim - 1 && (c=getchar()) != EOF && c !='\n'; ++i)
-    {
        s[i] = c;
-       printf("i is equal to %d\n", i);
-    }
     if (c == '\n') {
-        printf("i and j are %d, %d\n", i, j);
         // Starting point is extremely important as i is incremented once
         // Also note that we use j to reference in indexing
         for (j = i - 1; (s[j] == ' ' || s[j] == '\t'); --j)
-        {
-            printf("s[j] is %d\n", s[j]);
-            printf("s[i] is %d\n", s[i]);
-            printf("Encountered blank or tab retreating j is %d\n", j);
-        }
+            ;
         s[j] = c;
         ++j;
     }

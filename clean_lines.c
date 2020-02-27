@@ -21,15 +21,19 @@ int main()
 /* getlines: read a line into s, return length */     
 int getlines(char s[], int lim)
 {
-    int c, i, j;
+    int c, i, j = 0;
 
     for (i = 0; i < lim - 1 && (c=getchar()) != EOF && c !='\n'; ++i)
        s[i] = c;
     if (c == '\n') {
         // Starting point is extremely important as i is incremented once
         // Also note that we use j to reference in indexing
-        for (j = i - 1; (s[j] == ' ' || s[j] == '\t'); --j)
-            ;
+        if (i != 0)
+        {
+            for (j = i - 1; (s[j] == ' ' || s[j] == '\t'); --j)
+                ;
+            ++j;
+        }
         s[j] = c;
         ++j;
     }

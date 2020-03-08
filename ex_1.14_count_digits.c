@@ -20,7 +20,13 @@ main()
 
     printf("digits = ");
     for (i = 0; i < 10; ++i)
-        printf(" %d", ndigit[i]);
+    {
+        printf(" %d:", i);
+        for (int j = 0; j < ndigit[i]; ++j)
+            printf("*");
+        printf("\n");
+    }
+
     printf(", white space = %d, other = %d\n", nwhite, nother);
 }
 
